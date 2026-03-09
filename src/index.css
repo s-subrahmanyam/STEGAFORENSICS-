@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 25% 97%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 175 80% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 20% 25%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 175 60% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 40 90% 50%;
+    --warning-foreground: 220 20% 10%;
+
+    --success: 155 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 175 80% 38%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 20% 25%;
+    --sidebar-primary: 175 80% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 94%;
+    --sidebar-accent-foreground: 220 20% 25%;
+    --sidebar-border: 220 15% 88%;
+    --sidebar-ring: 175 80% 38%;
+
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Space Grotesk', sans-serif;
+  }
+
+  .dark {
+    --background: 225 25% 5%;
+    --foreground: 200 20% 92%;
+
+    --card: 225 22% 9%;
+    --card-foreground: 200 20% 92%;
+
+    --popover: 225 22% 9%;
+    --popover-foreground: 200 20% 92%;
+
+    --primary: 175 85% 48%;
+    --primary-foreground: 225 25% 5%;
+
+    --secondary: 225 18% 15%;
+    --secondary-foreground: 200 20% 80%;
+
+    --muted: 225 18% 13%;
+    --muted-foreground: 215 15% 50%;
+
+    --accent: 175 65% 42%;
+    --accent-foreground: 225 25% 5%;
+
+    --destructive: 0 72% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 42 92% 52%;
+    --warning-foreground: 225 25% 5%;
+
+    --success: 155 65% 42%;
+    --success-foreground: 225 25% 5%;
+
+    --border: 225 18% 16%;
+    --input: 225 18% 16%;
+    --ring: 175 85% 48%;
+
+    --sidebar-background: 225 22% 7%;
+    --sidebar-foreground: 200 20% 80%;
+    --sidebar-primary: 175 85% 48%;
+    --sidebar-primary-foreground: 225 25% 5%;
+    --sidebar-accent: 225 18% 13%;
+    --sidebar-accent-foreground: 200 20% 80%;
+    --sidebar-border: 225 18% 16%;
+    --sidebar-ring: 175 85% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  code, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .cyber-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.25), 0 0 60px hsl(var(--primary) / 0.08);
+  }
+  .cyber-glow-strong {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.4), 0 0 80px hsl(var(--primary) / 0.15);
+  }
+  .card-elevated {
+    box-shadow: 0 4px 24px hsl(var(--foreground) / 0.06), 0 1px 4px hsl(var(--foreground) / 0.04);
+  }
+  .gradient-cyber {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(200 80% 50%));
+  }
+  .gradient-card {
+    background: linear-gradient(180deg, hsl(var(--card)), hsl(var(--background)));
+  }
+  .text-gradient-cyber {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(200 80% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--primary) / 0.02) 2px,
+      hsl(var(--primary) / 0.02) 4px
+    );
+  }
+  .grid-pattern {
+    background-image:
+      radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.06) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  .dark .grid-pattern {
+    background-image:
+      radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  .animated-bg {
+    background: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary) / 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, hsl(200 80% 50% / 0.06), transparent);
+  }
+  .dark .animated-bg {
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary) / 0.12), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, hsl(200 80% 50% / 0.08), transparent);
+  }
+}
