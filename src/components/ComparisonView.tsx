@@ -234,7 +234,7 @@ const ComparisonView = ({ entries, onClose }: ComparisonViewProps) => {
                 ) : (
                   <>
                     <Trophy className="h-5 w-5 text-warning" />
-                    <ArrowRight className={`h-4 w-4 text-muted-foreground ${winner === 'A' ? 'rotate-180' : ''}`} />
+                    <ArrowRight className={`h-4 w-4 text-muted-foreground ${winner === 'B' ? 'rotate-180' : ''}`} />
                     <span className="text-[10px] font-mono text-muted-foreground">safer</span>
                   </>
                 )}
